@@ -64,4 +64,38 @@ describe('LinkedList', () => {
     linkedListWithNodes.insertAtIndex(2, "two");
     expect(linkedListWithNodes.head.next.next.data).toEqual("two");
   });
+
+  test('it should return node at index 0', () => {
+    expect(linkedListWithNodes.get(0).data).toEqual("node1");
+  });
+
+  test('it should return node at index 2', () => {
+    expect(linkedListWithNodes.get(2).data).toEqual("node3");
+  });
+
+  test('it should return -1 at index 10', () => {
+    expect(linkedListWithNodes.get(10)).toEqual(-1);
+  });
+
+  test('it should return value of "node3"', () => {
+    expect(linkedListWithNodes.search("node3").data).toEqual("node3");
+  });
+
+  test('it should return -1 of "node5"', () => {
+    expect(linkedListWithNodes.search("node5")).toEqual(-1);
+  });
+
+  test('it should return 4 as there are 4 nodes in the linked list', () => {
+    expect(linkedListWithNodes.count()).toEqual(4);
+  });
+
+  test('it should return 3 as there are 3 nodes in the linked list after remove at index 2', () => {
+    linkedListWithNodes.remove(0);
+    expect(linkedListWithNodes.count()).toEqual(3);
+  });
+
+  test('it should return 5 as there are 5 nodes in the linked list after insert new node at index 3', () => {
+    linkedListWithNodes.insertAtIndex(3, "three");
+    expect(linkedListWithNodes.count()).toEqual(5);
+  });
 });

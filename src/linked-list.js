@@ -24,18 +24,14 @@ export default class LinkedList {
       this.addFirst(value);
     } else {
       let curr = this.head;
-      //let prev = null;
       let start = 0;
       while(curr != null && start < index - 1) {
-        //prev = curr;
         curr = curr.next;
         start++;
       }
       if(curr == null) {
         this.insertLast(value);
       } else {
-        // prev.next = node;
-        // node.next = curr;
         node.next = curr.next;
         curr.next = node;
       }
