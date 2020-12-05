@@ -98,4 +98,11 @@ describe('LinkedList', () => {
     linkedListWithNodes.insertAtIndex(3, "three");
     expect(linkedListWithNodes.count()).toEqual(5);
   });
+
+  test('it should reverse the linked list', () => {
+    linkedListWithNodes.reverse();
+    expect(linkedListWithNodes.head.data).toEqual("node4");
+    expect(linkedListWithNodes.get(3).data).toEqual("node1");
+    expect(linkedListWithNodes.count()).toEqual(4);
+  });
 });

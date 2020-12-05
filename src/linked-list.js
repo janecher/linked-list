@@ -115,7 +115,7 @@ export default class LinkedList {
       prev = curr; 
       curr = next;
     }
-    return prev;
+    this.head = prev;
   }
 }
 
