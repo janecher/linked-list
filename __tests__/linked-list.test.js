@@ -40,4 +40,28 @@ describe('LinkedList', () => {
     expect(linkedListWithNodes.remove(9)).toEqual(-1);
   });
 
+  test('it should add node at the beggining of the list', () => {
+    linkedListWithNodes.addFirst("first");
+    expect(linkedListWithNodes.head.data).toEqual("first");
+  });
+
+  test('it should add node at index 0', () => {
+    linkedListWithNodes.insertAtIndex(0, "zero");
+    expect(linkedListWithNodes.head.data).toEqual("zero");
+  });
+
+  test('it should add node at the end of the list, index 4', () => {
+    linkedListWithNodes.insertAtIndex(4, "four");
+    expect(linkedListWithNodes.head.next.next.next.next.data).toEqual("four");
+  });
+
+  test('it should add node at the end of the list, index 6', () => {
+    linkedListWithNodes.insertAtIndex(6, "six");
+    expect(linkedListWithNodes.head.next.next.next.next.data).toEqual("six");
+  });
+
+  test('it should add node at the index 2', () => {
+    linkedListWithNodes.insertAtIndex(2, "two");
+    expect(linkedListWithNodes.head.next.next.data).toEqual("two");
+  });
 });
